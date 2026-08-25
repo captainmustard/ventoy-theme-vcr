@@ -1,0 +1,4 @@
+__pycache__/
+src/build/
+trial_*.png
+shot.png

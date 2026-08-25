@@ -1,0 +1,137 @@
+# Ventoy - retro VCR / VHS theme
+# Fonts are loaded by the Ventoy theme plugin via ventoy.json "fonts".
+
+desktop-image: "background.png"
+desktop-image-scale-method: "stretch"
+title-text: ""
+message-color: "#DFF6FF"
+message-bg-color: "#04070C"
+
+terminal-box: "terminal_box_*.png"
+terminal-font: "Better VCR 20"
+terminal-border: "0"
+
++ boot_menu {
+  left   = 18%
+  top    = 32%
+  width  = 64%
+  height = 52%
+
+  menu_pixmap_style          = "menu_*.png"
+  selected_item_pixmap_style = "select_*.png"
+
+  item_font           = "Better VCR 32"
+  item_color          = "#DFF6FF"
+  selected_item_font  = "Better VCR 32"
+  selected_item_color = "#04070C"
+
+  item_height     = 54
+  item_spacing    = 4
+  item_padding    = 14
+  item_icon_space = 18
+  icon_width      = 48
+  icon_height     = 48
+
+  scrollbar       = true
+  scrollbar_width = 12
+  scrollbar_thumb = "slider_*.png"
+}
+
++ boot_menu {
+  left   = 18%+22
+  top    = 32%+24
+  width  = 64%
+  height = 52%
+  item_font           = "Better VCR 32"
+  item_color          = "#3E9AAA"
+  selected_item_font  = "Better VCR 32"
+  selected_item_color = "#3E9AAA"
+
+  item_height     = 54
+  item_spacing    = 4
+  item_padding    = 14
+  item_icon_space = 66
+  icon_width      = 0
+  icon_height     = 0}
+
++ boot_menu {
+  left   = 18%+20
+  top    = 32%+24
+  width  = 64%
+  height = 52%
+  item_font           = "Better VCR 32"
+  item_color          = "#A32F4A"
+  selected_item_font  = "Better VCR 32"
+  selected_item_color = "#A32F4A"
+
+  item_height     = 54
+  item_spacing    = 4
+  item_padding    = 14
+  item_icon_space = 66
+  icon_width      = 0
+  icon_height     = 0}
+
++ progress_bar {
+  id   = "__timeout__"
+  text = "@TIMEOUT_NOTIFICATION_SHORT@"
+  font = "Better VCR 20"
+
+  left   = 18%
+  width  = 64%
+  top    = 86%
+  height = 22
+
+  text_color   = "#4DE8E0"
+  bg_color     = "#0A141C"
+  fg_color     = "#4DE8E0"
+  border_color = "#2A5A66"
+}
+
+# --- Ventoy status tokens -------------------------------------------------
++ hbox {
+  left = 18%
+  top  = 89%
+  width = 64%
+  height = 24
+  + label { text = "@VTOY_HOTKEY_TIP@" font = "Better VCR 20" color = "#6E8494" align = "left" }
+}
+
++ hbox {
+  left = 18%
+  top  = 92%
+  width = 20%
+  height = 24
+  + label { text = "@VTOY_MEM_DISK@" font = "Better VCR 20" color = "#FFB454" align = "left" }
+}
+
++ hbox {
+  left = 32%
+  top  = 92%
+  width = 20%
+  height = 24
+  + label { text = "@VTOY_ISO_RAW@" font = "Better VCR 20" color = "#FFB454" align = "left" }
+}
+
++ hbox {
+  left = 46%
+  top  = 92%
+  width = 20%
+  height = 24
+  + label { text = "@VTOY_GRUB2_MODE@" font = "Better VCR 20" color = "#FFB454" align = "left" }
+}
+
++ hbox {
+  left = 60%
+  top  = 92%
+  width = 22%
+  height = 24
+  + label { text = "@VTOY_WIMBOOT_MODE@" font = "Better VCR 20" color = "#FFB454" align = "left" }
+}
+
++ hbox {
+  left = 74%
+  top  = 89%
+  width = 22%
+  height = 24
+  + label { text = "@VTOY_ISO_UEFI_DRV@" font = "Better VCR 20" color = "#FF6FD8" align = "left" }
+}

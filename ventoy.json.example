@@ -1,0 +1,63 @@
+{
+    "control": [
+        {
+            "VTOY_DEFAULT_MENU_MODE": "0"
+        }
+    ],
+    "theme": {
+        "file": "/ventoy/theme/theme.txt",
+        "gfxmode": "1920x1080,1366x768,1280x720,1024x768,auto",
+        "display_mode": "GUI",
+        "ventoy_left": "80%",
+        "ventoy_top": "95%",
+        "ventoy_color": "#6E8494",
+        "fonts": [
+            "/ventoy/theme/vcr-32.pf2",
+            "/ventoy/theme/vcr-20.pf2"
+        ]
+    },
+    "menu_class": [
+        {
+            "key": "kali",
+            "class": "kali"
+        },
+        {
+            "key": "cachyos",
+            "class": "cachyos"
+        },
+        {
+            "key": "Win11",
+            "class": "windows"
+        },
+        {
+            "key": "HBCD",
+            "class": "hirens"
+        },
+        {
+            "key": "systemrescue",
+            "class": "sysrescue"
+        },
+        {
+            "key": "rescuezilla",
+            "class": "rescuezilla"
+        },
+        {
+            "key": "UEFI-Shell",
+            "class": "uefishell"
+        },
+        {
+            "class": "memtest",
+            "key": "BOOTX64"
+        }
+    ],
+    "menu_alias": [
+        {
+            "image": "/ISO/kali-linux-2026.2-live-everything-amd64.iso",
+            "alias": "Kali Linux 2026.2 - Live (Everything)"
+        },
+        {
+            "image": "/ISO/cachyos-desktop-linux-260809.iso",
+            "alias": "CachyOS Desktop (260809)"
+        }
+    ]
+}
