@@ -53,39 +53,6 @@ chromatic fringing.
 Edit `theme.base.txt` and regenerate. Don't edit the three `boot_menu` blocks in
 `theme/theme.txt` directly.
 
-## Test in a virtual machine
-
-`src/trial.sh` boots the physical drive in QEMU with OVMF, captures the
-framebuffer, and reports whether the menu rendered. The drive is attached
-read-only behind a temporary overlay, so the guest can't modify it.
-
-```bash
-sudo setfacl -m u:$USER:r /dev/sdb
-src/trial.sh mychange
-```
-
-A run takes about 40 seconds. For an interactive window, install `qemu-ui-gtk`
-and use `src/boot-ventoy-vm.sh`.
-
-## Notes on GRUB
-
-These behaviors are not documented and cost time to find:
-
-*   Percentages in `theme.txt` must be integers. A value such as `89.5%`
-    corrupts the heap and aborts the boot with `alloc magic is broken`.
-*   A 9-slice pixmap adds its corner size to the element as padding. GRUB sets
-    the box content to `item_height`, then draws content plus padding, so 24px
-    corners on `select_*.png` make the highlight 48px taller than the row.
-*   A ghost menu offset to the right does not render, at any declaration order.
-    Both ghosts in `mkchroma.py` are offset left for this reason.
-*   PF2 glyphs are 1-bit, so menu text supports no glow, gradient, or outline.
-    Scanline gaps are baked into the glyphs instead.
-*   Keep `background.png` modest. GRUB's PNG reader is less tolerant than
-    desktop tooling, and `pngcheck` passing proves nothing.
-
-To recover a drive that fails to boot, remove the `theme` block from
-`ventoy.json`.
-
 ## License
 
 Artwork, `theme.txt`, and the scripts are MIT licensed. See [LICENSE](LICENSE).
